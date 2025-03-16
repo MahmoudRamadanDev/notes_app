@@ -8,8 +8,8 @@ class NotesBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body:  Padding(
+    return  Scaffold(
+      body: const Padding(
         padding: const EdgeInsets.only(top: 50, right: 24, left: 24),
         child: Column (
           // mainAxisSize: MainAxisSize.min,
@@ -20,7 +20,8 @@ class NotesBody extends StatelessWidget {
           ),
           ],
         ),
-      )
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: () {} , child: Icon(Icons.add), backgroundColor: Colors.cyan,),
     );
   }
 }
