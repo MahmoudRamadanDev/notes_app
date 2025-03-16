@@ -14,16 +14,16 @@ class NotesApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark() ,
       debugShowCheckedModeBanner: false,
-      home: HomeView(),
+      home: const NotesView(),
     );
   }
 }
 
 /*
 
- routes: {
-        HomeView.id : (context) => HomeView(),
+  routes: {
+        NotesView.id : (context) => NotesView(),
       },
-      initialRoute: HomeView.id,
+      initialRoute: NotesView.id,
 
 */
