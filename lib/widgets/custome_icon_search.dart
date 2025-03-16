@@ -12,11 +12,13 @@ class CustomeIconSearch extends StatelessWidget {
                   color: const Color.fromARGB(255, 52, 55, 56),
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: const Icon(
-                      Icons.search,
-                      color: Colors.white,
-                    size: 28,
-                    ),
+                child: Center(
+                  child: const Icon(
+                        Icons.search,
+                        color: Colors.white,
+                      size: 28,
+                      ),
+                ),
                     );
   }
 }

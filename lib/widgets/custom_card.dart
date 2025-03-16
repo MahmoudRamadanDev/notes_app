@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:notes_app/constant.dart';
+class CustomCard extends StatelessWidget {
+  const CustomCard({super.key , this.color});
+  final Color? color ;
+  @override
+  Widget build(BuildContext context) {
+    return  Container(
+            padding: const EdgeInsets.only(top: 24 , bottom: 24 , left: 24),
+            margin: const EdgeInsets.only(bottom: 16),
+            decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(16),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                ListTile(
+                  contentPadding: const EdgeInsets.all(0),
+                  title: const Text("Flutter Tips" , style: TextStyle(fontSize: 28 , color: KPrimaryColor)),
+                  subtitle: Padding(
+                    padding: const EdgeInsets.only(top: 24),
+                    child: Text("Build Your Carerr With Tharwat Samy" , style: TextStyle(fontSize: 18 , color: KPrimaryColor.withOpacity(.5))),
+                  ),
+                  trailing:  IconButton(padding: const EdgeInsets.only(right: 24 , bottom: 24) ,onPressed: () {}, icon: const Icon(Icons.delete ,size: 35, color: KPrimaryColor)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 24 , top: 24),
+                  child: Text("${DateFormat('MMMM').format(DateTime(0, DateTime.now().month))} ${DateTime.now().day},${DateTime.now().year}" , style: TextStyle(fontSize: 16 ,color: KPrimaryColor.withOpacity(.5)),),
+                ),
+              ],
+            ),
+          );
+  }
+}
