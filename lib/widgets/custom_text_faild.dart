@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constant.dart';
 
-class CustomTextFaild extends StatelessWidget {
-  const CustomTextFaild({super.key , this.value , required this.text});
-  final double? value ;
+class CustomTextField extends StatelessWidget {
+  const CustomTextField({super.key , this.value = 1, required this.text});
+  final int? value ;
   final String text ;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only( top: 24),
       child: TextField(
+        maxLines: value,
         cursorColor: KThirdColor ,
         decoration: InputDecoration(
-        contentPadding:EdgeInsets.only(top:  value ?? 20 , bottom: value ?? 20 , right: value ?? 20 , left: 20),
         hintText: text,
+        
         hintStyle: const TextStyle(color: KThirdColor),
         enabledBorder: buildBorder(),
           focusedBorder: buildBorder(),

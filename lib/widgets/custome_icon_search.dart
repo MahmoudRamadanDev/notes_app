@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constant.dart';
 
 class CustomeIconSearch extends StatelessWidget {
-  const CustomeIconSearch({super.key});
-
+  const CustomeIconSearch({super.key, required this.icons});
+  final IconData icons ;
   @override
   Widget build(BuildContext context) {
     return  Container(
@@ -12,10 +13,10 @@ class CustomeIconSearch extends StatelessWidget {
                   color: const Color.fromARGB(255, 52, 55, 56),
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: Center(
-                  child: const Icon(
-                        Icons.search,
-                        color: Colors.white,
+                child:  Center(
+                  child:  Icon(
+                        icons,
+                        color: KSecondaryColor,
                       size: 28,
                       ),
                 ),

@@ -10,12 +10,12 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: const EdgeInsets.only(top: 100),
+      padding: const EdgeInsets.only(top: 50),
       child: GestureDetector(
         onTap: onTap,
         child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.cyan,
+                    color: KThirdColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   padding: const EdgeInsets.all(16),
