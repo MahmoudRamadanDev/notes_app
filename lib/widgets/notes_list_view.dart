@@ -7,11 +7,15 @@ class NotesListView extends StatelessWidget {
   // final  listOfColors = const [Colors.amber , Colors.red , Colors.blue , Colors.pinkAccent , Colors.deepPurple] ;
   @override
   Widget build(BuildContext context) {
-    return  ListView.builder(
-              itemCount: 5,
-              itemBuilder: (context , index) {
-                return const CustomCard(color: Colors.amber);
-              },
-            );
+    return  Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      child: ListView.builder(
+          padding: EdgeInsets.zero,
+                itemCount: 5,
+                itemBuilder: (context , index) {
+                  return const CustomCard(color: Colors.amber);
+                },
+              ),
+    );
   }
 }

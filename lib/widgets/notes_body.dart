@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/add_note_modal_sheet.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/custom_card.dart';
 import 'package:notes_app/widgets/notes_list_view.dart';
@@ -10,9 +11,8 @@ class NotesBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       body: const Padding(
-        padding: const EdgeInsets.only(top: 50, right: 24, left: 24),
+        padding:  EdgeInsets.only(top: 50, right: 24, left: 24),
         child: Column (
-          // mainAxisSize: MainAxisSize.min,
           children: [
           CustomAppBar(),
           Expanded(
@@ -21,7 +21,13 @@ class NotesBody extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {} , child: Icon(Icons.add), backgroundColor: Colors.cyan,),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+      showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return const AddNoteModalBottomSheet();
+        });
+      } , child: Icon( Icons.add), backgroundColor: Colors.cyan,),
     );
   }
 }
