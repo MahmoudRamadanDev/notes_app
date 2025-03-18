@@ -16,7 +16,7 @@ class CustomeIconSearch extends StatelessWidget {
                 child:  Center(
                   child:  Icon(
                         icons,
-                        color: KSecondaryColor,
+                        color: kSecondaryColor,
                       size: 28,
                       ),
                 ),

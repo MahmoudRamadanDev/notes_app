@@ -11,11 +11,11 @@ class CustomTextField extends StatelessWidget {
       padding: const EdgeInsets.only( top: 24),
       child: TextField(
         maxLines: value,
-        cursorColor: KThirdColor ,
+        cursorColor: kThirdColor ,
         decoration: InputDecoration(
         hintText: text,
         
-        hintStyle: const TextStyle(color: KThirdColor),
+        hintStyle: const TextStyle(color: kThirdColor),
         enabledBorder: buildBorder(),
           focusedBorder: buildBorder(),
         ),
@@ -27,7 +27,7 @@ class CustomTextField extends StatelessWidget {
     return OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: const BorderSide(
-            color: KSecondaryColor ,
+            color: kSecondaryColor ,
           ),
         );
   }
