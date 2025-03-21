@@ -28,7 +28,7 @@ class NotesBody extends StatelessWidget {
         builder: (context) {
           return const AddNoteModalBottomSheet();
         });
-      } , child: Icon( Icons.add), backgroundColor: kThirdColor,),
+      },child: Icon(Icons.add), backgroundColor: kThirdColor,)
     );
   }
 }
