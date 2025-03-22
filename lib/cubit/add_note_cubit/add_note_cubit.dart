@@ -9,6 +9,7 @@ class AddNoteCubit extends Cubit<AddNoteCubitStates> {
   AddNoteCubit() : super(InitialNotesState());
   
   addNotes (NoteModel note) async {
+
   emit(AddNotesLoading());
   try {
 
@@ -19,7 +20,9 @@ class AddNoteCubit extends Cubit<AddNoteCubitStates> {
   emit(AddNotesSuccesfull());
 
 }  catch (e) {
+
   emit(AddNotesFailer(e.toString()));
+  
 }
   
   }
