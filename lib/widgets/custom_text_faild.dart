@@ -10,13 +10,11 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only( top: 24),
-      child: TextFormField(
+      child: TextFormField( 
         onSaved: onSaved ,
         validator: (value) {
-          if (value!.contains(" ")) {
-            return "This Field Is Required And Type Your Notes" ;
-          }else if (value?.isEmpty ?? true) {
-            return "This Field Is Required";
+          if (!RegExp(r'^(?!\s*$).+').hasMatch(value!)) {
+            return "This Field Is Required And Type Your Notes";
           }else {
             return null ;
           }

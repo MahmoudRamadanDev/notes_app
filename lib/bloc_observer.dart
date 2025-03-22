@@ -4,12 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class BlocObservers implements BlocObserver {
     @override
     void onChange(BlocBase bloc, Change change) {
-        debugPrint(change.currentState);
+        debugPrint('changed: $change');
     }
 
     @override
     void onClose(BlocBase bloc) {
         // TODO: implement onClose
+        // debugPrint('close: $bloc');
+
     }
 
     @override
