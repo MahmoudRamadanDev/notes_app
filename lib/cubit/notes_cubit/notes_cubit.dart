@@ -9,20 +9,15 @@ import 'package:notes_app/models/note_model.dart';
 class NotesCubit extends Cubit<NotesState> {
   NotesCubit () : super (NotesInitial());
 
-  fetchAllDate () async {
-    emit(NotesLoading());
-  try {
+  List<NoteModel>? notes ;
+
+  fetchAllDate ()  {
 
   var notesBox =  Hive.box<NoteModel>(kHiveBox);
 
-  List<NoteModel> notes =  notesBox.values.toList();
+  notes =  notesBox.values.toList();
 
-  emit(NotesSuccesfull(notes));
 
-}  catch (e) {
 
-  emit(NotesFailer(errorMsg: e.toString()));
-
-}
   }
 }
