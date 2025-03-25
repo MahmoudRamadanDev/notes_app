@@ -17,7 +17,7 @@ class NotesBody extends StatefulWidget {
 class _NotesBodyState extends State<NotesBody> {
   @override
   void initState() {
-    BlocProvider.of<NotesCubit>(context).fetchAllDate();
+    BlocProvider.of<NotesCubit>(context).fetchAllData();
     super.initState();
   }
 

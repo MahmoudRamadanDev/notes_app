@@ -8,3 +8,8 @@ class NotesInitial extends NotesState {
 
 }
 
+
+
+class NotesSuccesfull extends NotesState {
+}
+

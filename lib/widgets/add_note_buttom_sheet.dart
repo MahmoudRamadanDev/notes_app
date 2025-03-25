@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:notes_app/cubit/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubit/add_note_cubit/add_note_cubit_states.dart';
+import 'package:notes_app/cubit/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/widgets/custom_button.dart';
 import 'package:notes_app/widgets/custom_text_faild.dart';
 import 'package:notes_app/widgets/form_add_buttom_sheet.dart';
@@ -23,6 +24,7 @@ class AddNoteModalBottomSheet extends StatelessWidget {
               print(state.errorMsg.toString());
             }
             if (state is AddNotesSuccesfull) {
+              BlocProvider.of<NotesCubit>(context).fetchAllData();
               Navigator.pop(context);
               print("successfully");
             }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:notes_app/constant.dart';
+import 'package:notes_app/cubit/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 class CustomCard extends StatelessWidget {
@@ -12,7 +14,7 @@ class CustomCard extends StatelessWidget {
     return  GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const EditNoteView() ;
+          return  EditNoteView(note: note,) ;
         }));
       },
       child: Container(
@@ -27,12 +29,16 @@ class CustomCard extends StatelessWidget {
                 children: [
                   ListTile(
                     contentPadding: const EdgeInsets.all(0),
-                    title:  Text(note.title , style: TextStyle(fontSize: 28 , color: kPrimaryColor)),
+                    title:  Text(note.title , style: const TextStyle(fontSize: 28 , color: kPrimaryColor)),
                     subtitle: Padding(
                       padding: const EdgeInsets.only(top: 24),
                       child: Text(note.subTitle , style: TextStyle(fontSize: 18 , color: kPrimaryColor.withOpacity(.5))),
                     ),
-                    trailing:  IconButton(padding: const EdgeInsets.only(right: 24 , bottom: 24) ,onPressed: () {note.delete();}, icon: const Icon(Icons.delete ,size: 35, color: kPrimaryColor)),
+                    trailing:  IconButton(padding: const EdgeInsets.only(right: 24 , bottom: 24) ,
+                    onPressed: () {
+                      note.delete();
+                      BlocProvider.of<NotesCubit>(context).fetchAllData();
+                      }, icon: const Icon(Icons.delete ,size: 35, color: kPrimaryColor)),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 24 , top: 24),

@@ -11,13 +11,13 @@ class NotesCubit extends Cubit<NotesState> {
 
   List<NoteModel>? notes ;
 
-  fetchAllDate ()  {
+  fetchAllData ()  {
 
   var notesBox =  Hive.box<NoteModel>(kHiveBox);
 
   notes =  notesBox.values.toList();
 
-
+  emit(NotesSuccesfull());
 
   }
 }
