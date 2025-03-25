@@ -32,7 +32,7 @@ class CustomCard extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 24),
                       child: Text(note.subTitle , style: TextStyle(fontSize: 18 , color: kPrimaryColor.withOpacity(.5))),
                     ),
-                    trailing:  IconButton(padding: const EdgeInsets.only(right: 24 , bottom: 24) ,onPressed: () {}, icon: const Icon(Icons.delete ,size: 35, color: kPrimaryColor)),
+                    trailing:  IconButton(padding: const EdgeInsets.only(right: 24 , bottom: 24) ,onPressed: () {note.delete();}, icon: const Icon(Icons.delete ,size: 35, color: kPrimaryColor)),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 24 , top: 24),
